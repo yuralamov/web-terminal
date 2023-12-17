@@ -26,3 +26,5 @@ if [ -d "$HOME/.mozilla" ] ; then
 fi
 #####
 Сохраняем (Control+O) и выходим (Control+X)
+В файл ~/.bashrc
+echo '[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx &> /dev/null' >> ~/.bashrc
