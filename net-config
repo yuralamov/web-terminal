@@ -1,0 +1,24 @@
+----- Настройка сетевых интерфейсов
+debian login: root
+Password: Flvby_123
+----- Узнать ip адрес и MAC
+ip a
+И смотрим на своем интерфейсе ip
+----- Если по DHCP, то оставляем как есть.
+При наличии сервера DHCP/DNS резервируем ip и имя по MAC компьютера. Или на роутере.
+MAC адрес в строке link/ether на своем интерфейсе
+----- Если настраиваем статический адрес, то приводим к виду (ставим свои ip)
+nano /etc/network/interfaces
+#####
+# enp0s3 - интерфейс
+# address - ip этого компьютера
+# gateway - ip роутера
+# dns-nameservers - DNS сервера
+iface enp0s3 inet static
+    address 192.168.0.21/24
+    gateway 192.168.0.1
+    dns-nameservers 192.168.0.1 1.1.1.1
+#####
+Сохраняем (Control+O) и выходим (Control+X)
+Перегружаем
+/sbin/reboot
