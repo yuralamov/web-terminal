@@ -19,7 +19,6 @@ iface enp0s3 inet static
     gateway 192.168.0.1
     dns-nameservers 192.168.0.1 1.1.1.1
 
-update-initramfs -u
 reboot
 ----- Далее все делаем на компьютере администратора
 ----- Проверка удаленного входа по ssh
