@@ -1,0 +1,8 @@
+su root -
+Отключим ненужные слипы
+nano /etc/systemd/logind.conf
+В файле раскоментируем и приведем строки
+HandleLidSwitch=ignore
+HandleLidSwitchDocked=ignore
+Сохраняем, выходим
+systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
