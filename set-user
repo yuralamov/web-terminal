@@ -9,3 +9,20 @@ nano ~/.config/openbox/environment
 Создаем файл openbox autostart
 nano ~/.config/openbox/autostart
 > Файл autostart
+Сохраняем (Control+O) и выходим (Control+X)
+chmod +x ~/.config/openbox/autostart
+Конфиг для startx
+cp /etc/X11/xinit/xinitrc ~/.xinitrc
+echo 'exec openbox-session' >> ~/.xinitrc
+В конец файла .profile добавляем строки
+nano ~/.profile
+#####
+if [ -d "$HOME/.cache/mozilla" ] ; then
+    rm -vrf $HOME/.cache/mozilla >> /dev/null
+fi
+
+if [ -d "$HOME/.mozilla" ] ; then
+    rm -vrf $HOME/.mozilla >> /dev/null
+fi
+#####
+Сохраняем (Control+O) и выходим (Control+X)
