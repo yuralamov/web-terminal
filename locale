@@ -2,7 +2,8 @@
 debian login: root 
 Password: Flvby_123 
 ----- Настройка локализации 
-apt update && apt upgrade -y dpkg-reconfigure {locales,console-setup,keyboard-configuration}
+apt update && apt full-upgrade -y
+dpkg-reconfigure {locales,console-setup,keyboard-configuration}
 - Настраивается locales / Локали, которые будут созданы - Выбираем пробелом en_US.UTF-8 UTF-8 и ru_RU.UTF-8 UTF-8, затем клавишей Tab -> Ok
 - Настраивается locales / Локаль по умолчанию в системном окружении: - ru_RU.UTF-8, клавишей Tab -> Ok
 - Настраивается console-setup / Используемая кодировка в консоли: - UTF-8, клавишей Tab -> Ok
