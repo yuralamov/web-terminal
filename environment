@@ -1,0 +1,2 @@
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+export LANG=ru_RU.UTF-8
