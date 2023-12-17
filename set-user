@@ -1,0 +1,8 @@
+----- Настройка пользователя
+debian login: user
+Password: user
+mkdir -p ~/.config/openbox/
+Создаем файл openbox environment
+nano ~/.config/openbox/environment
+> Файл environment
+Сохраняем (Control+O) и выходим (Control+X)
