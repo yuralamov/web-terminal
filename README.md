@@ -16,7 +16,7 @@
 1. debian-base Базовая установка системы на терминал
 2. locale Настройка локали
 3. net-config Настройка сетевых интерфейсов
-4. Установка и настройка общепрограммного обеспечения терминала
+4. set-soft Установка и настройка общепрограммного обеспечения терминала
 debian login: root
 Password: Flvby_123 
 apt update && apt install xinit openbox firefox-esr firefox-esr-l10n-ru -y 
