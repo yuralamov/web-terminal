@@ -6,3 +6,6 @@ mkdir -p ~/.config/openbox/
 nano ~/.config/openbox/environment
 > Файл environment
 Сохраняем (Control+O) и выходим (Control+X)
+Создаем файл openbox autostart
+nano ~/.config/openbox/autostart
+> Файл autostart
