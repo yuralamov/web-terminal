@@ -27,9 +27,7 @@ systemctl enable getty@.service
 mkdir -p /etc/systemd/system/getty@tty1.service.d/ 
 nano /etc/systemd/system/getty@tty1.service.d/override.conf 
 ##### 
-[Service] 
-ExecStart= 
-ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin user %I $TERM  
+ 
 ##### 
 6. remote-ssh Настройка удаленного управления
 7. disable-sleep Отключим ненужные слипы
