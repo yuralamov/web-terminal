@@ -1,0 +1,10 @@
+(firefox --fullscreen --private-window https://ya.ru) &
+
+while 1>0
+do
+ps -A | grep firefox-esr > /dev/null
+if [ $? = "1" ]
+        then firefox --fullscreen --private-window https://ya.ru
+fi
+sleep 5
+done
