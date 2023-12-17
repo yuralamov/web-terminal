@@ -28,3 +28,7 @@ fi
 Сохраняем (Control+O) и выходим (Control+X)
 В файл ~/.bashrc
 echo '[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx &> /dev/null' >> ~/.bashrc
+Смотрим, что получилось
+su root -
+(Пароль Flvby_123 при установке)
+/sbin/reboot
