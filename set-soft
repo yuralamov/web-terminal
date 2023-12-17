@@ -2,7 +2,7 @@
 debian login: root
 Password: Flvby_123
 apt update && apt install xinit openbox firefox-esr firefox-esr-l10n-ru -y
-Переконфигурируем x-server на Кто угодно
+Переконфигурируем x-server на Только пользователи из консоли
 /sbin/dpkg-reconfigure xserver-xorg-legacy
 Активируем и редактируем терминальный сервис
 systemctl enable getty@.service
