@@ -8,3 +8,4 @@ apt update && apt install xinit openbox firefox-esr firefox-esr-l10n-ru -y
 systemctl enable getty@.service
 mkdir -p /etc/systemd/system/getty@tty1.service.d/
 nano /etc/systemd/system/getty@tty1.service.d/override.conf
+>> Файл override.conf
