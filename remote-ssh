@@ -1,1 +1,51 @@
+----- Настройка удаленного управления - Входим под учеткой root
+apt update && apt install ssh ufw fail2ban -y
+ufw allow OpenSSH && ufw logging medium
+ufw enable && ufw reload && sudo ufw status verbose
+----- Узнать ip адрес и MAC
+ip a
+И смотрим на своем интерфейсе ip
+----- Если по DHCP, то оставляем как есть. При наличии сервера DHCP/DNS настраиваем ip по MAC компьютера. MAC адрес в строке link/ether на своем интерфейсе
+----- Если настраиваем статический адрес, то приводим к виду
+nano /etc/network/interfaces
 
+# enp0s3 - интерфейс
+# address - ip этого компьютера
+# gateway - ip роутера
+# dns-nameservers - DNS сервера
+iface enp0s3 inet static
+    address 192.168.0.21/24
+    gateway 192.168.0.1
+    dns-nameservers 192.168.0.1 1.1.1.1
+
+update-initramfs -u
+reboot
+----- Далее все делаем на компьютере администратора
+----- Проверка удаленного входа по ssh
+ssh user@192.168.0.21
+exit
+----- Создание и копирование ключа на терминальный компьютер
+Создание ключа ssh на хосте  
+ssh-keygen -t rsa -b 4096 -C "user@mail.ru"  
+Добавить ключ агенту
+eval $(ssh-agent -s)
+ssh-add /home/user/.ssh/id_ed25519 (где созданный ключ)  
+Копирование публичного ключа на терминал
+ssh-copy-id user@192.168.0.21
+Соглашаемся, вводим пароль
+----- Установка программного обеспечения и настройка
+Удаленное соединение с терминалом
+ssh user@192.168.0.21
+Вход под root
+su root -
+(Пароль Flvby_123 при установке)
+nano /etc/ssh/sshd_config
+В файле ищем строку 
+#PasswordAuthentication yes
+ и приводим к виду
+PasswordAuthentication no
+После этих манипуляций вход будет происходить только по ключу ssh
+Сохраняем (Control+O) и выходим (Control+X)
+Еще раз перезагрузим и войдем для проверки
+reboot
+ssh user@192.168.0.21
